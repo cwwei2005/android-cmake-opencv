@@ -132,6 +132,7 @@ extern "C"
 JNIEXPORT jintArray JNICALL
 Java_com_example_xy_csdn_MainActivity_blurImage(JNIEnv *env, jobject instance, jintArray pixels_,
                                                 jint w, jint h) {
+    //https://blog.csdn.net/xuyankuanrong/article/details/79194036
     jint *pixels = env->GetIntArrayElements(pixels_, NULL);
     Mat img(h, w, CV_8UC4, pixels);
     medianBlur(img,img,31);
